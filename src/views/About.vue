@@ -3,15 +3,25 @@
         <div class="site-content">
             <div class="content-warp">
                 <div class="about-site about-info">
-                    <section-title><span>❤</span>关于博客</section-title>
+                    <section-title><span>❤</span>关于我</section-title>
                     <div class="info-card">
                         {{ this.$store.state.notice.content }}
                     </div>
                 </div>
+                <div class="about-site about-info">
+                    <section-title><span>❤</span>关于此博客</section-title>
+                    <div class="info-card">
+                        本博客技术栈：
+                        前端：Web端【Vue2】 后台【Vue3】
+                        后端：Node+Mongodb
+                    </div>
+                </div>
                 <div class="about-me about-info">
                     <section-title id="Guestbook"><span>❤</span>更多</section-title>
-                    <span style="margin: 1em 0;">three小案例 试着一下拖动吧~~</span>
-                    <div id="container"></div>
+                    <span style="margin-top: 1px;">three小案例 试着一下拖动吧~~</span>
+                    <div id="container">
+                        <div class="box"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,6 +47,7 @@ export default {
     },
     methods: {
         init: function () {
+
             const container = document.getElementById("container");
             // 设置相机
             this.camera = new three.PerspectiveCamera(58, window.innerWidth / window.innerHeight, 0.01, 1000)
@@ -45,7 +56,7 @@ export default {
             this.scene = new three.Scene()
             // 初始化物体
             model.position.y = -95;
-            this.scene.add(model)
+            this.scene.add(model);
             // 初始化渲染器
             this.renderer = new three.WebGLRenderer({ antialias: true })
             this.renderer.setSize(container.clientWidth, container.clientHeight)
@@ -64,19 +75,51 @@ export default {
         animate: function () {
             requestAnimationFrame(this.animate)
             this.renderer.render(this.scene, this.camera)
+        },
+        initLogin() {
+            if (document.querySelector('canvas')) {
+                document.querySelector('.box').style.display = 'none'
+            }
         }
     },
     mounted() {
-        this.init()
-        this.animate()
+        this.init();
+        this.animate();
+        this.initLogin();
     }
 }
 </script>
 <style scoped lang="less">
 #container {
-    margin: 4em 0;
+    margin: 2em 0 4em 0;
     width: 100%;
     height: 50vh;
+
+    .box {
+        position: relative;
+        left: 45%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        animation: loader 1000ms infinite linear;
+        border-radius: 100%;
+        border: 6px solid #2dbb55;
+        border-left-color: transparent;
+        color: transparent;
+        display: inline-block;
+        line-height: 1.2;
+        width: 70px;
+        height: 70px;
+    }
+
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 .about {

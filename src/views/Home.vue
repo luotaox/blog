@@ -55,7 +55,7 @@ export default {
             features: [],
             postList: [],
             currPage: 1,
-            hasNextPage: false
+            hasNextPage: false,
         }
     },
     components: {
@@ -89,6 +89,7 @@ export default {
     },
     methods: {
         getCateList() {
+            this.currPage = 1;
             axios.post('/webapi/post/list/cate', {
                 category: `/category/${this.$route.params.cate}`
             }).then(res => {
@@ -117,6 +118,7 @@ export default {
         loadMore() {
             axios.post('/webapi/post/list', {
                 page: this.currPage + 1,
+                category: this.$route.params.cate
             }).then(res => {
                 this.postList = res.data.data.items || []
                 this.currPage = res.data.data.page

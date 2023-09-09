@@ -1,12 +1,12 @@
 <template>
     <div id="banner" :class="{ 'home-banner': isHome }">
-        <div class="banner-img" :style="{ 'background-image': `url(http://8.130.52.196:3000/${src})` }">
+        <div class="banner-img" :style="{ 'background-image': `url(http://139.9.102.224:3000/${src})` }">
             <template v-if="isHome">
                 <!--博主信息-->
                 <div class="focusinfo">
                     <!-- 头像 -->
                     <div class="header-tou">
-                        <router-link to="/"><img :src="'http://8.130.52.196:3000' + websiteInfo.avatar"></router-link>
+                        <router-link to="/"><img :src="'http://139.9.102.224:3000' + websiteInfo.avatar"></router-link>
                     </div>
                     <!-- 简介 -->
                     <div class="header-info">

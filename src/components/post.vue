@@ -3,7 +3,7 @@
         <div class="post-entry">
             <div class="feature">
                 <div @click="upViewCount(post)">
-                    <img :src="'http://8.130.52.196:3000' + post.cover" />
+                    <img :src="'http://139.9.102.224:3000' + post.cover" />
                 </div>
             </div>
             <h1 class="entry-title">

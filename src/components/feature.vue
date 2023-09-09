@@ -2,7 +2,7 @@
     <div class="feature">
         <router-link :to="`${data.href}/?title=${data.title}`">
             <div class="feature-title"><span class="foverlay">{{ data.title }}</span></div>
-            <img :src="'http://8.130.52.196:3000' + data.img">
+            <img :src="'http://139.9.102.224:3000' + data.img">
         </router-link>
     </div>
 </template>

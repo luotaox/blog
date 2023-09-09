@@ -13,11 +13,12 @@
             </div>
             <div class="footer-item">
                 <div>本站已运行 {{ runTimeInterval }}</div>
-                <div><a target="_blank" class="out-link" href="http://8.130.52.196:2000">☞后台管理</a></div>
+                <div><a target="_blank" class="out-link" href="http://admin.xiaxx.cn">☞后台管理</a></div>
             </div>
         </div>
-        <div class="copyright">最终解释权归本站所有
-            <span style="color: rgb(40, 118, 167);margin-left: 1rem; cursor: pointer">@多次拒绝李知恩</span>
+        <div class="copyright">
+            <a href="https://beian.miit.gov.cn" target="_blank"
+                style="color: rgb(21, 145, 222); font-size: 14px; ">黔ICP备2023011026号-1</a>
         </div>
     </div>
 </template>
